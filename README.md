@@ -12,4 +12,4 @@ A chrome extension for allowing you to quickly and easily rename a page. Useful 
 ## Usage
 1. Click the extension icon
 2. Enter the new name of the page
-3. Click "Rename"
+3. Click "Rename" or press Enter
