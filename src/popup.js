@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
   const submitBtn = document.getElementById('submitBtn');
+  const newTitleInput = document.getElementById('newTitle');
 
-  submitBtn.addEventListener('click', function() {
-    const newTitle = document.getElementById('newTitle').value;
-
+  // Function to handle renaming
+  function handleRename() {
+    const newTitle = newTitleInput.value;
     if (newTitle) {
       // Get the current tab id as an integer
       const queryOptions = { active: true, currentWindow: true };
@@ -21,6 +22,16 @@ document.addEventListener('DOMContentLoaded', function() {
         // Close the popup
         window.close();
       });
+    }
+  }
+
+  // Add click event listener to submit button
+  submitBtn.addEventListener('click', handleRename);
+
+  // Add keydown event listener to newTitle input
+  newTitleInput.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+      handleRename();
     }
   });
 });
